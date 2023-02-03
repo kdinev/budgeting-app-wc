@@ -22,10 +22,10 @@
     "declaration": true,
     "incremental": true
   },
-  "exclude": [
-    "dist"
+  "files": [
+    "src/index.ts"
   ],
   "include": [
-    "**/*.ts"
+    "src/**/*.d.ts"
   ]
 }
