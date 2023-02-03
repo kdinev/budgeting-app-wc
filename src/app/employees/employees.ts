@@ -106,8 +106,8 @@ export default class Employees extends LitElement {
             </igc-button>
           </div>
         </div>
-        <div class="row-layout group_2">
-          <igc-tree-grid .data="${this.northwindEmployees}" primary-key="employeeID" foreign-key="managerID" display-density="cosy" allow-filtering="true" filter-mode="excelStyleFilter" class="ig-typography tree-grid">
+        <div class="row-layout group_2 ig-scrollbar">
+          <igc-tree-grid .data="${this.northwindEmployees}" height="1100px" primary-key="employeeID" foreign-key="managerID" display-density="cosy" allow-filtering="true" filter-mode="excelStyleFilter" class="ig-typography tree-grid">
             <igc-grid-toolbar>
               <igc-grid-toolbar-actions>
                 <igc-grid-toolbar-hiding></igc-grid-toolbar-hiding>
