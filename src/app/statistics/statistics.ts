@@ -1,9 +1,10 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { defineComponents, IgcComboComponent } from 'igniteui-webcomponents';
-import NorthwindService from '../service/northwind-service';
+import { IgcCategoryChartModule } from '@infragistics/igniteui-webcomponents-charts';
+import { ModuleManager } from '@infragistics/igniteui-webcomponents-core';
+import FinancialService from '../service/financial-service';
 
-defineComponents(IgcComboComponent);
+ModuleManager.register(IgcCategoryChartModule);
 
 @customElement('app-statistics')
 export default class Statistics extends LitElement {
@@ -15,28 +16,30 @@ export default class Statistics extends LitElement {
       align-items: stretch;
       align-content: flex-start;
     }
-    .combo {
-      height: max-content;
-      min-width: min-content;
-      flex-shrink: 0;
+    .category-chart {
+      margin: 12px;
+      min-width: 400px;
+      min-height: 300px;
+      flex-grow: 1;
+      flex-basis: 0;
     }
   `;
 
   constructor() {
     super();
-    const northwindService: NorthwindService = new NorthwindService();
-    this.northwindCategories = northwindService.getData('Categories');
+    const financialService: FinancialService = new FinancialService();
+    this.financialBoxOfficeRevenue = financialService.getData('BoxOfficeRevenue');
   }
 
   @property()
-  private northwindCategories?: any[];
+  private financialBoxOfficeRevenue?: any[];
 
   render() {
     return html`
       <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
       <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet'>
       <link rel='stylesheet' href='../../ig-theme.css'>
-      <igc-combo ?outlined="${true}" .data="${this.northwindCategories}" value-key="categoryID" display-key="categoryID" ?autoFocusSearch="${true}" class="combo"></igc-combo>
+      <igc-category-chart .dataSource="${this.financialBoxOfficeRevenue}" computed-plot-area-margin-mode="series" class="category-chart"></igc-category-chart>
     `;
   }
 }

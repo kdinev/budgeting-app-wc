@@ -49,6 +49,7 @@ export default class Employees extends LitElement {
       min-height: 50px;
     }
     .combo {
+      width: 280px;
       height: max-content;
       min-width: min-content;
       flex-shrink: 0;
