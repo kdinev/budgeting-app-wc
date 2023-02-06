@@ -26,7 +26,7 @@
     "@infragistics/igniteui-webcomponents-inputs": "~4.0.4",
     "@infragistics/igniteui-webcomponents-layouts": "~4.0.4",
     "@vaadin/router": "^1.7.4",
-    "igniteui-webcomponents": "~4.1.0",
+    "igniteui-webcomponents": "~4.2.1",
     "lit": "^2.0.2",
     "typescript": "^4.5.2"
   },
