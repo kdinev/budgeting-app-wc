@@ -17,7 +17,7 @@
     "build": "rimraf dist && tsc && rollup -c rollup.config.mjs",
     "start:build": "web-dev-server --root-dir dist --app-index index.html --open",
     "lint": "eslint --ext .js,.ts,.html . --ignore-path .gitignore",
-    "test": "tsc && wtr",
+    "test": "tsc --project tsconfig.spec.json && wtr",
     "infragistics-login": "echo \"IMPORTANT: When prompted for username enter in this format `name!!domain.com`\" && npm adduser --registry=https://packages.infragistics.com/npm/js-licensed/ --scope=@infragistics --always-auth"
   },
   "dependencies": {
@@ -27,7 +27,7 @@
     "@infragistics/igniteui-webcomponents-inputs": "~4.0.4",
     "@infragistics/igniteui-webcomponents-layouts": "~4.0.4",
     "@vaadin/router": "^1.7.4",
-    "igniteui-webcomponents": "~4.1.0",
+    "igniteui-webcomponents": "~4.2.1",
     "lit": "^2.0.2",
     "typescript": "^4.5.2"
   },
@@ -44,6 +44,7 @@
     "@web/rollup-plugin-html": "^1.10.1",
     "@web/rollup-plugin-import-meta-assets": "^1.0.7",
     "@web/test-runner": "next",
+    "@web/test-runner-playwright": "^0.9.0",
     "babel-plugin-template-html-minifier": "^4.1.0",
     "concurrently": "^6.3.0",
     "deepmerge": "^4.2.2",
