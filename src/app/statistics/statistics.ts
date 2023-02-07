@@ -2,7 +2,7 @@ import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { IgcCategoryChartModule } from '@infragistics/igniteui-webcomponents-charts';
 import { ModuleManager } from '@infragistics/igniteui-webcomponents-core';
-import FinancialService from '../service/financial-service';
+import FinancialService from '../service/financial-service.js';
 
 ModuleManager.register(IgcCategoryChartModule);
 

@@ -1,4 +1,4 @@
-import { Northwind } from "../static-data/northwind"
+import { Northwind } from '../static-data/northwind.js';
 
 export default class NorthwindService {
   public getData(tableName: string): any[] {

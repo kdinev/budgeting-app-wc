@@ -1,8 +1,10 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { defineComponents, IgcButtonComponent, IgcComboComponent, IgcRippleComponent } from 'igniteui-webcomponents';
+import {
+  defineComponents, IgcButtonComponent, IgcComboComponent, IgcRippleComponent,
+} from 'igniteui-webcomponents';
 import '@infragistics/igniteui-webcomponents-grids/grids/combined.js';
-import NorthwindService from '../service/northwind-service';
+import NorthwindService from '../service/northwind-service.js';
 
 defineComponents(IgcComboComponent, IgcButtonComponent, IgcRippleComponent);
 

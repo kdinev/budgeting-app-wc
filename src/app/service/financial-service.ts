@@ -1,4 +1,4 @@
-import { Financial } from "../static-data/financial"
+import { Financial } from '../static-data/financial.js';
 
 export default class FinancialService {
   public getData(tableName: string): any[] {
