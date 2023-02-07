@@ -22,6 +22,10 @@
     "declaration": true,
     "incremental": true
   },
+  "exclude": [
+    "dist",
+    "test"
+  ],
   "files": [
     "src/index.ts"
   ],
