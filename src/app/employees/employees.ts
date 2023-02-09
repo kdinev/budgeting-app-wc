@@ -1,8 +1,10 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { defineComponents, IgcButtonComponent, IgcComboComponent, IgcRippleComponent } from 'igniteui-webcomponents';
+import {
+  defineComponents, IgcButtonComponent, IgcComboComponent, IgcRippleComponent,
+} from 'igniteui-webcomponents';
 import '@infragistics/igniteui-webcomponents-grids/grids/combined.js';
-import NorthwindService from '../service/northwind-service';
+import NorthwindService from '../service/northwind-service.js';
 
 defineComponents(IgcComboComponent, IgcButtonComponent, IgcRippleComponent);
 
@@ -39,7 +41,6 @@ export default class Employees extends LitElement {
       align-content: flex-start;
       position: relative;
       min-width: 50px;
-      min-height: 50px;
     }
     .group_2 {
       justify-content: flex-start;
@@ -50,6 +51,7 @@ export default class Employees extends LitElement {
       min-height: 50px;
     }
     .combo {
+      width: 280px;
       height: max-content;
       min-width: min-content;
       flex-shrink: 0;
@@ -94,7 +96,7 @@ export default class Employees extends LitElement {
       <link rel='stylesheet' href='node_modules/@infragistics/igniteui-webcomponents-grids/grids/themes/dark/material.css'>
       <div class="column-layout group">
         <div class="row-layout group_1">
-          <igc-combo ?outlined="${true}" .data="${this.northwindCategories}" value-key="categoryID" display-key="categoryID" ?autoFocusSearch="${true}" class="combo"></igc-combo>
+          <igc-combo ?outlined="${true}" .data="${this.northwindCategories}" value-key="categoryID" display-key="name" ?autoFocusSearch="${true}" class="combo"></igc-combo>
           <div class="row-layout group_2">
             <igc-button variant="outlined" class="button">
               Max SS Income
@@ -114,8 +116,8 @@ export default class Employees extends LitElement {
               </igc-grid-toolbar-actions>
               <igc-grid-toolbar-title>Org Chart</igc-grid-toolbar-title>
             </igc-grid-toolbar>
-            <igc-column field="lastName" data-type="string" header="lastName" sortable="true" resizable="true" selectable="false"></igc-column>
             <igc-column field="employeeID" data-type="number" header="employeeID" sortable="true" resizable="true" disable-hiding="true" selectable="false"></igc-column>
+            <igc-column field="lastName" data-type="string" header="lastName" sortable="true" resizable="true" selectable="false"></igc-column>
             <igc-column field="firstName" data-type="string" header="firstName" sortable="true" resizable="true" selectable="false"></igc-column>
             <igc-column field="title" data-type="string" header="title" sortable="true" resizable="true" selectable="false"></igc-column>
             <igc-column field="titleOfCourtesy" data-type="string" header="titleOfCourtesy" sortable="true" resizable="true" selectable="false"></igc-column>
