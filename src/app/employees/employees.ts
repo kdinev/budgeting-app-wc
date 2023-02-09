@@ -1,10 +1,8 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import {
-  defineComponents, IgcButtonComponent, IgcComboComponent, IgcRippleComponent,
-} from 'igniteui-webcomponents';
+import { defineComponents, IgcButtonComponent, IgcComboComponent, IgcRippleComponent } from 'igniteui-webcomponents';
 import '@infragistics/igniteui-webcomponents-grids/grids/combined.js';
-import NorthwindService from '../service/northwind-service.js';
+import NorthwindService from '../service/northwind-service';
 
 defineComponents(IgcComboComponent, IgcButtonComponent, IgcRippleComponent);
 
@@ -108,8 +106,8 @@ export default class Employees extends LitElement {
             </igc-button>
           </div>
         </div>
-        <div class="row-layout group_2 ig-scrollbar">
-          <igc-tree-grid .data="${this.northwindEmployees}" height="1100px" primary-key="employeeID" foreign-key="managerID" display-density="cosy" allow-filtering="true" filter-mode="excelStyleFilter" class="ig-typography tree-grid">
+        <div class="row-layout group_2">
+          <igc-tree-grid .data="${this.northwindEmployees}" primary-key="employeeID" foreign-key="managerID" display-density="cosy" allow-filtering="true" filter-mode="excelStyleFilter" class="ig-typography tree-grid">
             <igc-grid-toolbar>
               <igc-grid-toolbar-actions>
                 <igc-grid-toolbar-hiding></igc-grid-toolbar-hiding>
