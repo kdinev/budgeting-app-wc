@@ -23,14 +23,9 @@
     "incremental": true
   },
   "exclude": [
-    "dist",
-    "test",
-    "src/**/*.test.ts"
-  ],
-  "files": [
-    "src/index.ts"
+    "dist"
   ],
   "include": [
-    "src/**/*.d.ts"
+    "**/*.ts"
   ]
 }

@@ -1,10 +1,5 @@
 import { html, css, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { IgcCategoryChartModule } from '@infragistics/igniteui-webcomponents-charts';
-import { ModuleManager } from '@infragistics/igniteui-webcomponents-core';
-import FinancialService from '../service/financial-service.js';
-
-ModuleManager.register(IgcCategoryChartModule);
+import { customElement } from 'lit/decorators.js';
 
 @customElement('app-statistics')
 export default class Statistics extends LitElement {
@@ -16,30 +11,39 @@ export default class Statistics extends LitElement {
       align-items: stretch;
       align-content: flex-start;
     }
-    .category-chart {
+    .column-layout {
+      display: flex;
+      flex-direction: column;
+    }
+    .group {
+      justify-content: flex-start;
+      align-items: stretch;
+      align-content: flex-start;
+      position: relative;
       margin: 12px;
-      min-width: 400px;
-      min-height: 300px;
-      flex-grow: 1;
-      flex-basis: 0;
+      width: 100%;
+      min-width: 50px;
+      min-height: 50px;
+    }
+    .content {
+      height: max-content;
+      min-width: min-content;
     }
   `;
-
-  constructor() {
-    super();
-    const financialService: FinancialService = new FinancialService();
-    this.financialBoxOfficeRevenue = financialService.getData('BoxOfficeRevenue');
-  }
-
-  @property()
-  private financialBoxOfficeRevenue?: any[];
 
   render() {
     return html`
       <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
       <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet'>
       <link rel='stylesheet' href='../../ig-theme.css'>
-      <igc-category-chart .dataSource="${this.financialBoxOfficeRevenue}" computed-plot-area-margin-mode="series" class="category-chart"></igc-category-chart>
+      <div class="column-layout group">
+        <h2 class="content">
+          Charts with Statistics
+        </h2>
+        <p class="typography__body-1 content">
+          Will include a chart with statistics for the organization and the budget
+        </p>
+      </div>
     `;
   }
 }
