@@ -1,23 +1,10 @@
 import { html, css, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { Router } from '@vaadin/router';
-import {
-  defineComponents,
-  IgcIconButtonComponent,
-  IgcIconComponent,
-  IgcNavbarComponent,
-  IgcNavDrawerComponent,
-  IgcRippleComponent,
-} from 'igniteui-webcomponents';
 import { routes } from './app-routing.js';
+import { defineComponents, IgcIconButtonComponent, IgcIconComponent, IgcNavbarComponent, IgcNavDrawerComponent, IgcRippleComponent } from 'igniteui-webcomponents';
 
-defineComponents(
-  IgcNavbarComponent,
-  IgcIconButtonComponent,
-  IgcIconComponent,
-  IgcRippleComponent,
-  IgcNavDrawerComponent,
-);
+defineComponents(IgcNavbarComponent, IgcIconButtonComponent, IgcIconComponent, IgcRippleComponent, IgcNavDrawerComponent);
 
 @customElement('app-root')
 export default class App extends LitElement {

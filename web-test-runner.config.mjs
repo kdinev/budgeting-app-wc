@@ -4,7 +4,7 @@ const filteredLogs = ['Running in dev mode', 'lit-html is in dev mode'];
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   /** Test files to run */
-  files: 'test/src/app/**/*.test.js',
+  files: 'dist/src/app/**/*.test.js',
 
   /** Resolve bare module imports */
   nodeResolve: {
@@ -25,7 +25,7 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   // esbuildTarget: 'auto',
 
   /** Amount of browsers to run concurrently */
-  // concurrentBrowsers: 3,
+  // concurrentBrowsers: 2,
 
   /** Amount of test files per browser to test concurrently */
   // concurrency: 1,
